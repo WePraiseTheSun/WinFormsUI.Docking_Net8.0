@@ -1,4 +1,1 @@
-I am not the owner of the project!!! 
-I only upgraded it to latest .NET Library so that you can use vs2022 for development.
-Please refer to DockPanel Suite for the original code.
-
+This is a branch of dockpanel suite, only minor re-work on references. This is target to work with Net 8.0 and specific for Visual Studio 2022. It serves a template for a new project.
