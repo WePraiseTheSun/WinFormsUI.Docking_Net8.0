@@ -26,7 +26,7 @@ namespace DockSample
 
             AutoScaleMode = AutoScaleMode.Dpi;
 
-        //    SetSplashScreen();
+            SetSplashScreen();
             CreateStandardControls();
 
             showRightToLeft.Checked = (RightToLeft == RightToLeft.Yes);
@@ -156,7 +156,7 @@ namespace DockSample
         }
 
         private readonly ToolStripRenderer _toolStripProfessionalRenderer = new ToolStripProfessionalRenderer();
-        
+
         private void SetSchema(object sender, System.EventArgs e)
         {
             // Persist settings when rebuilding UI
@@ -376,7 +376,7 @@ namespace DockSample
         {
             if (dockPanel.DocumentStyle == DocumentStyle.SystemMdi)
             {
-                menuItemClose.Enabled = 
+                menuItemClose.Enabled =
                     menuItemCloseAll.Enabled =
                     menuItemCloseAllButThisOne.Enabled = (ActiveMdiChild != null);
             }
@@ -497,7 +497,7 @@ namespace DockSample
 
         private void SetSplashScreen()
         {
-            
+
             _showSplash = true;
             _splashScreen = new SplashScreen();
 
@@ -518,15 +518,16 @@ namespace DockSample
 
         private void ResizeSplash()
         {
-            if (_showSplash) {
-                
-            var centerXMain = (this.Location.X + this.Width) / 2.0;
-            var LocationXSplash = Math.Max(0, centerXMain - (_splashScreen.Width / 2.0));
+            if (_showSplash)
+            {
 
-            var centerYMain = (this.Location.Y + this.Height) / 2.0;
-            var LocationYSplash = Math.Max(0, centerYMain - (_splashScreen.Height / 2.0));
+                var centerXMain = (this.Location.X + this.Width) / 2.0;
+                var LocationXSplash = Math.Max(0, centerXMain - (_splashScreen.Width / 2.0));
 
-            _splashScreen.Location = new Point((int)Math.Round(LocationXSplash), (int)Math.Round(LocationYSplash));
+                var centerYMain = (this.Location.Y + this.Height) / 2.0;
+                var LocationYSplash = Math.Max(0, centerYMain - (_splashScreen.Height / 2.0));
+
+                _splashScreen.Location = new Point((int)Math.Round(LocationXSplash), (int)Math.Round(LocationYSplash));
             }
         }
 
@@ -549,7 +550,7 @@ namespace DockSample
             CreateStandardControls();
 
             Assembly assembly = Assembly.GetAssembly(typeof(MainForm));
-            Stream xmlStream = assembly.GetManifestResourceStream("DockSample.Resources.DockPanel.xml");
+            Stream xmlStream = assembly.GetManifestResourceStream("DockSampleCore.Resources.DockPanel.xml");
             dockPanel.LoadFromXml(xmlStream, m_deserializeDockContent);
             xmlStream.Close();
 
